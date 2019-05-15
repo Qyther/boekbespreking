@@ -1,0 +1,144 @@
+@font-face {
+    font-family: 'modeka';
+    src: local('modeka'), local('modeka'), url(https://raw.githubusercontent.com/Qyther/boekbespreking/master/modeka/modeka-webfont.woff2) format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+    font-family: 'aqua';
+    src: local('aqua'), local('aqua'), url(https://raw.githubusercontent.com/Qyther/boekbespreking/master/aqua/aqua.woff) format('woff');
+    font-weight: normal;
+    font-style: normal;
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+body {
+  background: #333;
+  margin: 0;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  position: fixed;
+}
+.pages {
+  position: absolute;
+  transition-timing-function: ease-in-out;
+  transition: .5s top;
+}
+.top {
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 25vh;
+  z-index: 1;
+}
+.bottom {
+  background: white;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 25vh;
+  top: 75vh;
+}
+.maincanvas {
+  position: fixed;
+  left: 0;
+  top: 25vh;
+  height: 50vh;
+  background: #ddd;
+  box-shadow: #999 inset 0 0 0 2px;
+}
+.title:hover, .author:hover, .credits:hover {
+  color: black;
+}
+.title, .credits, .author, .credits1 {
+  color: #999;
+  text-align: center;
+  transition-timing-function: ease-in-out;
+  transition: 1s color;
+}
+.title {
+  font-family: "aqua";
+  font-size: 5.5vh;
+  margin-top: 5.75vh;
+}
+.author {
+  font-family: "aqua";
+  font-size: 3vh;
+  letter-spacing: 2px;
+}
+.credits1 {
+	position: fixed;
+	width: 100vw;
+  font-family: "modeka";
+  letter-spacing: 2px;
+  font-size: 12vh;
+  font-weight: 900;
+  top: 112vh;
+  z-index: 5;
+  transition-timing-function: ease-in-out;
+  transition: 1s color, .2s top;
+}
+	
+.credits {
+	position: absolute;
+	width: 100vw;
+  font-family: "modeka";
+  letter-spacing: 2px;
+  font-size: 12vh;
+  margin-top: 4.5vh;
+  font-weight: 900;
+}
+.bulbs {
+  position: fixed;
+  left: 0;
+  top: 0;
+  display: flex;
+  z-index: 1;
+  margin-left: -2px;
+}
+.bulb {
+  margin-left: 2px;
+  width: 3vh;
+  height: 3vh;
+  background: #ddd;
+  opacity: .45;
+  border-radius: 10000vw;
+  cursor: pointer;
+  transition-timing-function: ease-in-out;
+  transition: opacity .4s;
+}
+.bulb:hover {
+  opacity: .6;
+}
+.selected {
+  opacity: 1;
+}
+.selected:hover {
+  opacity: .9;
+}
+.secretbg {
+  width: 100vw;
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 25vh;
+  background: white
+}
+.pusher {
+  width: 1px;
+  height: 1px;
+  margin-top: 100vh;
+}
+.page {
+  width: 100vw;
+  height: 100vh;
+  background: white;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+}
